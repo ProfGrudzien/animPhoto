@@ -1,0 +1,133 @@
+body {
+    background-color: #222222;
+    color: white;
+    font-size: 18pt;
+    font-family: sans-serif;
+    cursor: default;
+}
+
+div.animation {
+    display: block;
+    width: 800px;
+    height: 600px;
+    margin: 10px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+div.controlles {
+    display: block;
+    width: max-content;
+    margin: auto;
+}
+
+div.message {
+    display: inline-block;
+    width: 800px;
+    color: white;
+    vertical-align: middle;
+}
+
+div.side {
+    display: inline-block;
+    color: white;
+    max-width: 600px;
+    vertical-align: middle;
+}
+
+button {
+    background: none;
+    border: none;
+    width: 80px;
+    text-align: center;
+    font-size: 48pt;
+    color: white;
+    cursor: pointer;
+    vertical-align: middle;
+    margin: 0px 20px;
+}
+
+.lexique {
+    font-style: italic;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.animated {
+    position: absolute;
+    transition: transform 0.5s ease;
+    transform:
+        var(--t1,)
+        var(--t2,);
+}
+
+.rotated {
+    --t1: perspective(600px) rotateY(30deg);
+}
+
+.antirotated {
+    --t1: perspective(600px) rotateY(-30deg);
+}
+
+.absent {
+    --t2: translate(0px, 600px);
+}
+
+.eclair {
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: center / contain no-repeat url(eclair.svg);
+    animation: 2s zoom;
+}
+
+@keyframes zoom {
+  from {transform: scale(0)}
+  to   {transform: scale(1)}
+}
+
+span.frac{
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
+span.haut{
+    display: block;
+    text-align: center;
+}
+
+span.bas{
+    display: block;
+    border-top: 2px solid;
+    text-align: center;
+}
+
+table {
+    text-align: center;
+    border-collapse: collapse;
+}
+
+td {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+p {
+    margin: 10px 0px;
+}
+
+div.cliquable {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    display: inline-block;
+    width: max-content;
+    cursor: pointer;
+    border: 1px solid white;
+    text-decoration: underline;
+    padding: 10px;
+    border: 1px solid white;
+}

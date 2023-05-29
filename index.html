@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>animation</title>
+        <link rel="stylesheet" href="files/animation.css"/>
+    </head>
+    <body>
+        <div class="animation">
+            <img src="files/jardin.jpg" class="animated absent" id="jardin" style="top:0px; left:0px;">
+            <img src="files/lentille.svg" class="animated rotated absent" id="lentille" height="250px" style="top:100px; left:5px;">
+            <img src="files/bayer.svg" class="animated rotated absent" id="bayer_r" height="250px" style="top:100px; left:105px;">
+            <img src="files/bayer.svg" class="animated absent" id="bayer" width="300px" style="top:100px; left:250px;">
+            <div class="animated absent" id="matrice" style="height:300px; width:300px; top:100px; left:250px; text-align:center; position:absolute">
+                <img src="files/matrice.svg" height="300px">
+            </div>
+            <img src="files/matrice.svg" class="animated rotated absent" id="matrice_r" height="250px" style="top:100px; left:205px;">
+            <img src="files/cpu.png" class="animated rotated absent" id="cpu" height="100px" style="top:175px; left:385px;">
+            <img src="files/ecran.svg" class="animated rotated absent" id="ecran" height="250px" style="top:100px; left:455px;">
+            <img src="files/focus.png" class="animated absent" id="focus" width="600px" style="top:100px; left:100px; filter:grayscale(1)">
+            <div class="animated absent" id="photositeBleu" style="height:300px; width:300px; top:100px; left:250px; text-align:center; position:absolute;">
+                <div class="animated rotated" id="psB" style="height:60px; width:60px; top:100px; left:10px; border:2px solid black;"></div>
+                <div class="animated rotated" style="height:60px; width:60px; top:100px; left:65px; background:#0000ff padding-box; border:2px solid black;"></div>
+                <img src="files/lampeBleue.svg" id='lampe' style="width:100px; top:80px; left:180px; position:absolute;">
+            </div>
+            <div class="animated absent" id="photositeRougeVert" style="height:300px; width:460px; top:100px; left:170px; text-align:center; position:absolute;">
+                <div class="animated rotated" id="psR" style="height:60px; width:60px; top:100px; left:10px; border:1px solid black;"></div>
+                <div class="animated rotated" style="height:60px; width:60px; top:100px; left:65px; background:#00ff00 padding-box; border:1px solid black;"></div>
+                <img src="files/lampeBleue.svg" id="lampe2" style="width:100px; top:80px; left:180px; position:absolute;">
+                <div class="animated antirotated" style="height:60px; width:60px; top:100px; left:335px; background:#ff0000 padding-box; border:1px solid black; position:absolute;"></div>
+                <div class="animated antirotated" id="psV" style="height:60px; width:60px; top:100px; left:390px; border:1px solid black; position:absolute;"></div>
+            </div>
+            <div id="dematricage" class="animated absent" style="height: 100%">
+                <div id="dematricage1">
+                    <p>Calcul des composantes RGV pour le photo-site au centre :</p>
+                    <div class="side">
+                        <table>
+                            <tr>
+                                <td style="background: green">12</td>
+                                <td style="background: red">24</td>
+                                <td style="background: green">130</td>
+                            </tr>
+                            <tr>
+                                <td style="background: blue">49</td>
+                                <td style="background: green">120</td>
+                                <td style="background: blue">37</td>
+                            </tr>
+                            <tr>
+                                <td style="background: green">50</td>
+                                <td style="background: red">200</td>
+                                <td style="background: green">130</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="side">
+                        <p>La composante rouge est <span class='lexique' title='Estimée d&rsquo;une valeur manquante à partir des valeurs voisines.'>interpolée</span> grâce aux 2 photo-sites voisins recouvert d'un filtre rouge :</p>
+                        R = <span class="frac"><span class="haut">24 + 200</span><span class="bas">2</span></span> = 112
+                        <p>La composante verte est directement lue sur le photo-site car il est recouvert d'un filtre vert :</p>
+                        V = 120
+                        <p>La composante bleue est <span class='lexique' title='Estimée d&rsquo;une valeur manquante à partir des valeurs voisines.'>interpolée</span> grâce aux 2 photo-sites voisins recouvert d'un filtre bleu :</p>
+                        B = <span class="frac"><span class="haut">49 + 37</span><span class="bas">2</span></span> = 43
+                    </div>
+                    <p>Le pixel a pour composante (112, 120, 43), c'est un pixel <span style="background-color:rgb(112, 120, 43)">&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+                </div>
+                <div id="dematricage2">
+                    <p>Calcul des composantes RGV pour le photo-site au centre :</p>
+                    <div class="side">
+                        <table>
+                            <tr>
+                                <td style="background: blue">21</td>
+                                <td style="background: green">41</td>
+                                <td style="background: blue">31</td>
+                            </tr>
+                            <tr>
+                                <td style="background: green">94</td>
+                                <td style="background: red">21</td>
+                                <td style="background: green">73</td>
+                            </tr>
+                            <tr>
+                                <td style="background: blue">150</td>
+                                <td style="background: green">20</td>
+                                <td style="background: blue">38</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="side">
+                        <p>La composante rouge est directement lue sur le photo-site car il est recouvert d'un filtre rouge :</p>
+                        R = 21
+                        <p>La composante verte est <span class='lexique' title='Estimée d&rsquo;une valeur manquante à partir des valeurs voisines.'>interpolée</span> grâce aux 4 photo-sites voisins recouvert d'un filtre vert :</p>
+                        V = <span class="frac"><span class="haut">41 + 94 + 73 + 20</span><span class="bas">4</span></span> = 57
+                        <p>La composante bleue est <span class='lexique' title='Estimée d&rsquo;une valeur manquante à partir des valeurs voisines.'>interpolée</span> grâce aux 4 photo-sites voisins recouvert d'un filtre bleu :</p>
+                        B = <span class="frac"><span class="haut">21 + 31 + 150 + 38</span><span class="bas">4</span></span> = 60
+                    </div>
+                    <p>Le pixel a pour composante (21, 57, 60), c'est un pixel <span style="background-color:rgb(21, 57, 60)">&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+                </div>
+                <div class="cliquable" id="autreExemple">autre exemple</div>
+            </div>
+        </div>
+        <div class="controlles">
+            <button id="precedente">&lt;</button>
+            <div class="message"></div>
+            <button id="suivante">&gt;</button>
+        </div>
+        <script type="text/javascript" src="files/animation.js"></script>
+    </body>
+</html>
