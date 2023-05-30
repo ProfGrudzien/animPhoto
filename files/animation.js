@@ -102,6 +102,30 @@ const etapes = [
         entrees: ["dematricage"],
         sorties: ["bayer"],
         special: []
+    },{
+        effacer: true,
+        texte: "Pour assurer à Paul de prendre une belle photo, des algorithmes l'assistent tout au long du processus.",
+        entrees: ["photo"],
+        sorties: ["dematricage"],
+        special: []
+    },{
+        effacer: true,
+        texte: "Les algorithmes de prise de vue automatisent la mise au point et la stabilisation pour éviter que la photo de soit floue.",
+        entrees: [],
+        sorties: [],
+        special: []
+    },{
+        effacer: true,
+        texte: "Les algorithmes de traitement règlent la balance des blancs, le contraste et la saturation de couleurs pour que les couleurs soient vives.",
+        entrees: [],
+        sorties: [],
+        special: []
+    },{
+        effacer: true,
+        texte: "Enfin, un algorithme de compression permet l'enregistrement des photos dans un format necessitant moins de mémoire (JPEG par exemple).",
+        entrees: [],
+        sorties: [],
+        special: []
     }
 ]
 
